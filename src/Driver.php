@@ -17,6 +17,7 @@ use Gnello\Mattermost\Models\ChannelModel;
 use Gnello\Mattermost\Models\ClusterModel;
 use Gnello\Mattermost\Models\CommandModel;
 use Gnello\Mattermost\Models\ComplianceModel;
+use Gnello\Mattermost\Models\CustomCallModel;
 use Gnello\Mattermost\Models\DataRetentionModel;
 use Gnello\Mattermost\Models\ElasticsearchModel;
 use Gnello\Mattermost\Models\EmojiModel;
@@ -362,5 +363,13 @@ class Driver
     public function getThreadModel()
     {
         return $this->getModel(ThreadModel::class);
+    }
+
+    /**
+     * @return PluginModel
+     */
+    public function getCustomCallModel()
+    {
+        return $this->getModel(CustomCallModel::class);
     }
 }
