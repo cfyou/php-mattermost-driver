@@ -366,7 +366,7 @@ class Driver
     }
 
     /**
-     * @return PluginModel
+     * @return CustomCallModel
      */
     public function getCustomCallModel()
     {
