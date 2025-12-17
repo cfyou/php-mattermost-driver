@@ -91,7 +91,7 @@ class Driver
         $container['client'] = new Client($container);
 
         if (isset($driverOptions['token'])) {
-            $driverOptions['client']->setToken($driverOptions['token']);
+            $container['client']->setToken($driverOptions['token']);
         }
 
         $this->container = $container;
