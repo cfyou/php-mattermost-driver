@@ -90,6 +90,10 @@ class Driver
         $container['driver'] = $driverOptions;
         $container['client'] = new Client($container);
 
+        if (isset($driverOptions['token'])) {
+            $this->container['client']->setToken($driverOptions['token']);
+        }
+
         $this->container = $container;
     }
 
@@ -102,7 +106,6 @@ class Driver
 
         if (isset($driverOptions['token'])) {
 
-            $this->container['client']->setToken($driverOptions['token']);
             $response = $this->getUserModel()->getAuthenticatedUser();
 
         } else if (isset($driverOptions['login_id']) && isset($driverOptions['password'])) {
